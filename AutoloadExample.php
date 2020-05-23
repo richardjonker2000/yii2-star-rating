@@ -7,7 +7,7 @@ namespace maxiorphy\star_rating;
  */
 class AutoloadExample extends \yii\base\Widget
 {
-    public function run()
+    public static function run()
     {
         return "Hello!";
     }
