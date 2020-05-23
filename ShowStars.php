@@ -15,20 +15,27 @@ class ShowStars extends \yii\base\Widget
         for ($i = 0; $i < $rate - 1; $i++) {
             echo '<i class="fa fa-star gold-star"></i>';
         }
-        if ($rate - $this->rating >= 0.5) {
+
+        if ($this->rating == 0) {
+        }
+        elseif($rate-$this->rating == 0){
+            echo '<i class="fa fa-star gold-star" ></i>';
+        }
+
+        elseif ($rate - $this->rating <= 0.0) {
+            echo '<i class="fa fa-star gold-star" ></i>';
+        }
+        elseif ($rate - $this->rating <= 0.5) {
             echo '<i class="fa fa-star-half-alt gold-star" ></i>';
-        } elseif ($this->rating == 0) {
-        } elseif ($rate - $this->rating <= 0.5) {
-            echo '<i class="fa fa-star gold-star" ></i>';
-        } else if ($rate - $this->rating >= 0 && $this->rating != 0) {
-            echo '<i class="fa fa-star gold-star" ></i>';
-        } else {
+        }
+
+        else {
             echo '<i class="fa fa-star grey-star" ></i>';
         }
+
         for ($i = 0; $i < 5 - $rate; $i++) {
             echo '<i class="fa fa-star grey-star"></i>';
         }
-
 
     }
 
