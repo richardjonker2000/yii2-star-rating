@@ -2,23 +2,25 @@
 
 namespace maxiorphy\star_rating;
 
-/**
- * This is just an example.
- */
-class AutoloadExample extends \yii\base\Widget
+
+class ShowStars extends \yii\base\Widget
+
 {
-    public function run($rating)
+    public $rating = 'rating';
+
+    public function run()
     {
-        $rate = round($rating);
+        $rate = round($this->rating);
+
         for ($i = 0; $i < $rate - 1; $i++) {
             echo '<i class="fa fa-star gold-star"></i>';
         }
-        if ($rate - $rating >= 0.5) {
+        if ($rate - $this->rating >= 0.5) {
             echo '<i class="fa fa-star-half-alt gold-star" ></i>';
-        } elseif ($rating == 0) {
-        } elseif ($rate - $rating <= 0.5) {
+        } elseif ($this->rating == 0) {
+        } elseif ($rate - $this->rating <= 0.5) {
             echo '<i class="fa fa-star gold-star" ></i>';
-        } else if ($rate - $rating >= 0 && $rating != 0) {
+        } else if ($rate - $this->rating >= 0 && $this->rating != 0) {
             echo '<i class="fa fa-star gold-star" ></i>';
         } else {
             echo '<i class="fa fa-star grey-star" ></i>';
@@ -26,6 +28,8 @@ class AutoloadExample extends \yii\base\Widget
         for ($i = 0; $i < 5 - $rate; $i++) {
             echo '<i class="fa fa-star grey-star"></i>';
         }
-        echo "Hello!";
+
+
     }
+
 }

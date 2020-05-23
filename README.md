@@ -28,4 +28,6 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \maxiorphy\star_rating\AutoloadExample::widget(); ?>```
+<?= \maxiorphy\star_rating\ShowStars::widget(['rating'=>$yourRating]); ?>
+```
+ Where $yourRating is the amount of stars you want to display. At this stage the widget only displays medium stars.
